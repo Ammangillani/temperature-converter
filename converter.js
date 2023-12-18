@@ -24,3 +24,19 @@ Fahrenhite.addEventListener("input", () => {
 
   if (!Fahrenhite.value) celsius.value = "";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const switchIcon = document.getElementById("switchIcon");
+  const celsiusInputBox = document.getElementById("celsiusInputBox");
+  const fahrenheitInputBox = document.getElementById("fahrenheitInputBox");
+
+  switchIcon.addEventListener("click", function () {
+    // Store the innerHTML content before switching
+    const tempCelsiusInput = celsiusInputBox.innerHTML;
+    const tempFahrenheitInput = fahrenheitInputBox.innerHTML;
+
+    // Switch the content between the divs
+    celsiusInputBox.innerHTML = tempFahrenheitInput;
+    fahrenheitInputBox.innerHTML = tempCelsiusInput;
+  });
+});
